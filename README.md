@@ -6,7 +6,14 @@
 4. [Detailed Steps](#4)
    1. [Data Loading](#5)
    2. [Data Splitting](#6) 
-
+   3. [Entity and Relation Definition](#7)
+   4. [Prompt Template and NLP Model](#8)
+      1. [System Prompt](#9)
+      2. [Human Prompt](#10)
+   5. [Parsing and Query Generation](#11)
+   6. [Building the Knowledge Graph](#12)
+5. [Conclusions](#13)
+6. [References ](#14)
  
 
 <a name="1"></a>
