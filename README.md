@@ -4,8 +4,9 @@
 2. [Tools and frameworks](#2)  
 3. [Quick note on the data used for this demonstration](#3)
 4. [Detailed Steps](#4)
-   1. [Hard Questions](#4) 
-3. [Complete SQL Mastery](#5)  
+   1. [Data Loading](#5)
+   2. [Data Splitting](#6) 
+
  
 
 <a name="1"></a>
@@ -54,25 +55,24 @@ In the following, the steps required to transform the text above into graph will
 <a name="4"></a>
 ## Detailed Steps
 
-Data Loading
+<a name="5"></a>
+### Data Loading
+
 In order to chat with our data we first need to load data and adjust its format to be able to work with. LangChain provides us with over 80 document loaders, which allows us access data of various formats like PDF, HTML, JSON, Word, PowerPoint, etc. from various resources like
-
-websites
-
-databases
-
-Youtube
-
-…
+- websites
+- databases
+- Youtube
+- …
 
 For this we can use different document loaders, shown in Fig. 2, to load data as text, video transcript, etc. and convert them to a standard document object which can consist of contents and the associated metadata. 
 
-Open rgg.png
-rgg.png
+
 Fig. 2: LangChain document loaders 
 Then we need to split data into individual sentences to facilitate finer extraction of entities and relations.
 
-Data Splitting 
+<a name="6"></a>
+### Data Splitting 
+
 The documents could be huge and we need to split them up into smaller chunks. This is very important because when we do retrieval augmentation generation we only need to retrieve the piece of the content that is most relevant: we do not want to select the whole document that we loaded in but rather only a paragraph or a few sentences.
 
 Open doc sp.png
