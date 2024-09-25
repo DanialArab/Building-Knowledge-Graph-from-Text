@@ -1,9 +1,10 @@
 # Text-to-Graph
 
 1. [Potentials at a Glance](#1)
-   1. [Easy Questions](#2)  
-   2. [Medium Questions](#3)
-   3. [Hard Questions](#4) 
+2. [Tools and frameworks](#2)  
+3. [Quick note on the data used for this demonstration](#3)
+4. [Detailed Steps](#4)
+   1. [Hard Questions](#4) 
 3. [Complete SQL Mastery](#5)  
  
 
@@ -25,7 +26,9 @@ To transform unstructured text into a structured knowledge graph database we can
 
 The project demonstrates the power of NLP models in conjunction with graph databases to transform raw/unstructured text data into an interconnected/structured knowledge graph.
 
-Quick note on the data used for this demonstration
+<a name="3"></a>
+## Quick note on the data used for this demonstration
+
 As a quick demonstration, I chose data loaded as text from Wikipedia on Iranian legendary goalkeeper Ahmad Reza Abedzadeh. Here is the cleaned text:
 
 Ahmadreza Abedzadeh (Persian: احمدرضا عابدزاده, born 25 May 1966) is an Iranian former footballer who played as a goalkeeper.
@@ -48,7 +51,9 @@ Abedzadeh also runs a restaurant in Motelghoo, one of the cities of Northern Ira
 
 In the following, the steps required to transform the text above into graph will be detailed. 
 
-Detailed Steps
+<a name="4"></a>
+## Detailed Steps
+
 Data Loading
 In order to chat with our data we first need to load data and adjust its format to be able to work with. LangChain provides us with over 80 document loaders, which allows us access data of various formats like PDF, HTML, JSON, Word, PowerPoint, etc. from various resources like
 
