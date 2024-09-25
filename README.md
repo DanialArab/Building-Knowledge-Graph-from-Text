@@ -112,17 +112,23 @@ NLTKTextSplitter
 
 SpacyTextSplitter
 
-Entity and Relation Definition
+<a name="7"></a>
+### Entity and Relation Definition
+
 Types of entities and relationships can be defined based on the context of the data. This step is crucial in setting up a clear schema for the knowledge graph. To set up the schema this resource could be useful. For this project I used the following entity types and relations:
 
 
 
 entity_types = ['person','award','team', 'company', 'characteristic']
 relation_types = ['playsFor','hasAward','hasCharacteristic','defeated','isFounderOf', 'member', 'children']
-Prompt Template and NLP Model
+
+<a name="8"></a>
+### Prompt Template and NLP Model
+
 A prompt template is created to direct the NLP model to extract the desired information. The Llama3 model via Groq could be utilized to process the text and generate structured JSON outputs. We need to use two distinct types of prompts: System Prompt and Human Prompt. Each serves a specific purpose in guiding the model to perform the extraction task effectively.
 
-System Prompt
+<a name="9"></a>
+#### System Prompt
 The System Prompt defines the role and expectations for the language model. It sets up the model's task by providing clear instructions on how to identify and format the entities and relationships. It informs the model that it needs to act as an advanced algorithm designed to extract structured information for building a knowledge graph. It also specifies that the model should generate output in a JSON format, for example, with predefined keys: head, head_type, relation, tail, and tail_type. Each key has a specific role in representing the relationships between entities.
 
 The system prompt also details the types of entities and relations that the model should focus on, ensuring that the extracted information aligns with the provided definitions. It also directs the model to extract as many entities and relations as possible, and to generate the output without additional explanations or text. Here is the system prompt I used:
@@ -144,7 +150,10 @@ system_prompt = PromptTemplate(
     """,
     input_variables=["entity_types","relation_types"],
 )
-Human Prompt
+
+<a name="10"></a>
+#### Human Prompt
+
 The Human Prompt is used to provide a more user-oriented approach to guide the model. It helps the model understand how to apply the system’s instructions to specific examples and the new text it will process. It offers examples of how text should be processed and what kind of extracted information should look like, serving as a reference for the model. It reiterates the entity and relation types that the model should use, ensuring consistency with the system prompt. It provides a specific text from which the model needs to extract entities and relations, using the format and guidelines set in the system prompt. It includes instructions for formatting the extracted information to ensure the output adheres to the required structure. Here is my human prompt:
 
 
@@ -251,7 +260,8 @@ The outputs will include identified entities and their respective relationships,
 
  
 
-Parsing and Query Generation
+<a name="11"></a>
+### Parsing and Query Generation
 The structured JSON outputs are parsed to extract unique entities and relationships. Cypher queries ,shown below, are created to merge these entities and establish their relationships in the Neo4j database.
 
 
@@ -283,7 +293,9 @@ MERGE (amir)-[:playsFor]->(iranian_national_team)
 MERGE (esteghlal)-[:hasAward]->(iranian_football_league)
 MERGE (persepolis)-[:hasAward]->(iranian_football_league)
 MERGE (persepolis)-[:hasAward]->(hazfi_cup)
-Building the Knowledge Graph
+
+<a name="12"></a>
+### Building the Knowledge Graph
 Based on the above Cypher queries, we can built and populate the knowledge graph in Neo4j, shown below:
 
  
@@ -291,8 +303,12 @@ Based on the above Cypher queries, we can built and populate the knowledge graph
 Open fibnal.png
 fibnal.png
 Fig. 5: Final graph obtained from the text
-Conclusions
+
+<a name="13"></a>
+## Conclusions
 Here, I've provided a brief demonstration of how tools such as LangChain, Llama3, Groq, and Neo4j can be leveraged to convert text into graph databases. By efficiently transforming text data into meaningful, interconnected entities and relationships, we open up new opportunities for enhancing fraud detection and combating money laundering. The potential applications are extensive, ranging from AIG databases to KYB processes, where we can better identify related, parent/child companies and ensure secure identity verification. 
 
-References 
+<a name="14"></a>
+## References 
+
 LangChain: Chat with Your Data  
