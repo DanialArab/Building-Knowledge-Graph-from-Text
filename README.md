@@ -31,23 +31,23 @@ The project demonstrates the power of NLP models in conjunction with graph datab
 
 As a quick demonstration, I chose data loaded as text from Wikipedia on Iranian legendary goalkeeper Ahmad Reza Abedzadeh. Here is the cleaned text:
 
-Ahmadreza Abedzadeh (Persian: احمدرضا عابدزاده, born 25 May 1966) is an Iranian former footballer who played as a goalkeeper.
-He played for Esteghlal, Sepahan, Persepolis and the Iranian national team.
-He made 78 appearances for Iran, and played for his country at the 1998 FIFA World Cup.Abedzadeh had an unbeaten record in the Tehran derby with 13 matches, seven wins and six draws.
-While playing for Persepolis, he went 802 consecutive minutes without conceding a goal.Abedzadeh was called up at 18 for the Iran national under-20 football team in 1984.
-After his good shows, he was invited to the senior team in 1987 by then-manager Parviz Dehdari.
-Abedzadeh debuted in the match against Kuwait on 27 February 1987, in which he conceded a goal in a 2–1 victory.
-He started in the 1990 Asian Games, where they won the gold medal after defeating North Korea in the final and Abedzadeh saved two penalties.
-At the tournament, he conceded only two goals scored from penalty kicks.Iran defeated Australia in the FIFA World Cup qualification play-offs to reach 1998 FIFA World Cup, their second participation in the World Cup and first since 1978.
-He missed the first match at the World Cup against Yugoslavia due to injury, then captained Iran at the next two games against United States and Germany.
-Iran finished third in their group and Abedzadeh announced his retirement from international football after the final match.Abedzadeh suffered a stroke in 2001 and that was the point in which he let go of professional football.
-He was released some weeks later, but required several surgeries after, and even to this day, has side effects from his stroke.
-Abedzadeh suffered again on 11 March 2007 when his mother died.He has also been the goalkeeping coach for many clubs after retiring from playing football.
-He coached Saipa in 2001, Esteghlal Ahvaz in 2005, Persepolis from 2008 to 2009, Steel Azin in 2010 and Los Angeles Blues from 2011 to 2012.Dubbed the Eagle of Asia for his ability to protect the net, Abedzadeh's international career stretched for 11 years.
-In 2009, he was named in a poll as Iran's favorite player the net, Abedzadeh's international career stretched for 11 years.
-In 2009, he was named in a poll as Iran's favorite player of last 30 years.
-His goalkeeping legacy in Iran is rivaled only by Nasser Hejazi.Abedzadeh married in 1988 and has one daughter, Negar, and one son, Amir, who is also a goalkeeper and plays for SD Ponferradina and the Iranian national team.
-Abedzadeh also runs a restaurant in Motelghoo, one of the cities of Northern Iran.EsteghlalIranian Football League: 1989–90Asian Club Championship: 1990–91, runner up: 1991PersepolisIranian Football League: 1995–96, 1996–97, 1998–99, 1999–2000Hazfi Cup: 1998–99IranAsian Games Gold Medal: 1990RSSSF archive of Ahmad Reza Abedzadeh's international appearances
+      Ahmadreza Abedzadeh (Persian: احمدرضا عابدزاده, born 25 May 1966) is an Iranian former footballer who played as a goalkeeper.
+      He played for Esteghlal, Sepahan, Persepolis and the Iranian national team.
+      He made 78 appearances for Iran, and played for his country at the 1998 FIFA World Cup.Abedzadeh had an unbeaten record in the Tehran derby with 13 matches, seven wins and six draws.
+      While playing for Persepolis, he went 802 consecutive minutes without conceding a goal.Abedzadeh was called up at 18 for the Iran national under-20 football team in 1984.
+      After his good shows, he was invited to the senior team in 1987 by then-manager Parviz Dehdari.
+      Abedzadeh debuted in the match against Kuwait on 27 February 1987, in which he conceded a goal in a 2–1 victory.
+      He started in the 1990 Asian Games, where they won the gold medal after defeating North Korea in the final and Abedzadeh saved two penalties.
+      At the tournament, he conceded only two goals scored from penalty kicks.Iran defeated Australia in the FIFA World Cup qualification play-offs to reach 1998 FIFA World Cup, their second participation in the World Cup and first since 1978.
+      He missed the first match at the World Cup against Yugoslavia due to injury, then captained Iran at the next two games against United States and Germany.
+      Iran finished third in their group and Abedzadeh announced his retirement from international football after the final match.Abedzadeh suffered a stroke in 2001 and that was the point in which he let go of professional football.
+      He was released some weeks later, but required several surgeries after, and even to this day, has side effects from his stroke.
+      Abedzadeh suffered again on 11 March 2007 when his mother died.He has also been the goalkeeping coach for many clubs after retiring from playing football.
+      He coached Saipa in 2001, Esteghlal Ahvaz in 2005, Persepolis from 2008 to 2009, Steel Azin in 2010 and Los Angeles Blues from 2011 to 2012.Dubbed the Eagle of Asia for his ability to protect the net, Abedzadeh's international career stretched for 11 years.
+      In 2009, he was named in a poll as Iran's favorite player the net, Abedzadeh's international career stretched for 11 years.
+      In 2009, he was named in a poll as Iran's favorite player of last 30 years.
+      His goalkeeping legacy in Iran is rivaled only by Nasser Hejazi.Abedzadeh married in 1988 and has one daughter, Negar, and one son, Amir, who is also a goalkeeper and plays for SD Ponferradina and the Iranian national team.
+      Abedzadeh also runs a restaurant in Motelghoo, one of the cities of Northern Iran.EsteghlalIranian Football League: 1989–90Asian Club Championship: 1990–91, runner up: 1991PersepolisIranian Football League: 1995–96, 1996–97, 1998–99, 1999–2000Hazfi Cup: 1998–99IranAsian Games Gold Medal: 1990RSSSF archive of Ahmad Reza Abedzadeh's international appearances
 
 In the following, the steps required to transform the text above into graph will be detailed. 
 
