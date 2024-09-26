@@ -82,7 +82,7 @@ Then we need to split data into individual sentences to facilitate finer extract
 
 The documents could be huge and we need to split them up into smaller chunks. This is very important because when we do retrieval augmentation generation we only need to retrieve the piece of the content that is most relevant: we do not want to select the whole document that we loaded in but rather only a paragraph or a few sentences.
 
-
+![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/doc%20sp.png)
 Fig. 3: Document splitting in LangChain 
 
 This document splitting may sound trivial but it has a lot of nuances and details that may have a large effect down the line. The main idea is that we want to retain the meaningful relationship. For example, if we have the following data like
