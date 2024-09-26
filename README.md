@@ -1,4 +1,4 @@
-# Text-to-Graph
+# Text to Graph: Swift Transformation from Unstructured Text to Structured Knowledge Graph
 
 1. [Potentials at a Glance](#1)
 2. [Tools and frameworks](#2)  
@@ -82,14 +82,14 @@ Then we need to split data into individual sentences to facilitate finer extract
 
 The documents could be huge and we need to split them up into smaller chunks. This is very important because when we do retrieval augmentation generation we only need to retrieve the piece of the content that is most relevant: we do not want to select the whole document that we loaded in but rather only a paragraph or a few sentences.
 
-Open doc sp.png
-doc sp.png
+
 Fig. 3: Document splitting in LangChain 
+
 This document splitting may sound trivial but it has a lot of nuances and details that may have a large effect down the line. The main idea is that we want to retain the meaningful relationship. For example, if we have the following data like
 
-...
-on this model. The Toyota Camry has a head-snapping 80 HP and an eight-speed automatic transmission that will
-...
+      ...
+      on this model. The Toyota Camry has a head-snapping 80 HP and an eight-speed automatic transmission that will
+      ...
 
 Chunk 1: on this model. The Toyota Camry has a head-snapping
 
@@ -98,26 +98,20 @@ Chunk 2: 80 HP and an eight-speed automatic transmission that will
 
 If we simply do splitting as above we may end up with part of the sentence in one chunk and the other part of the sentence in the other chunk. Therefore, we will not be able to answer the question like “what are the specifications on the Camry?” because we do not have the right information in either chunk. To solve this issue, we do the split with some chunks and overlaps, shown below:
 
-Open chunk.png
-chunk.png
+
+
 Fig. 4: Document splitting into different chunks with specifying the chunk size and overlap helps us retain meaningful relationship
+
 We can specify these details like chunk size, chunk overlap, separator, etc. in the specific text splitter we use, some of them areas follow:
 
- CharacterTextSplitter 
-
-MarkdownHeaderTextSplitter
-
-TokenTextSplitter
-
-SentenceTransformersTokenTextSplitter
-
-RecursiveCharacterTextSplitter
-
-Language
-
-NLTKTextSplitter
-
-SpacyTextSplitter
+- CharacterTextSplitter
+- MarkdownHeaderTextSplitter
+- TokenTextSplitter
+- SentenceTransformersTokenTextSplitter
+- RecursiveCharacterTextSplitter
+- Language
+- NLTKTextSplitter
+- SpacyTextSplitter
 
 <a name="7"></a>
 ### Entity and Relation Definition
@@ -126,8 +120,8 @@ Types of entities and relationships can be defined based on the context of the d
 
 
 
-entity_types = ['person','award','team', 'company', 'characteristic']
-relation_types = ['playsFor','hasAward','hasCharacteristic','defeated','isFounderOf', 'member', 'children']
+      entity_types = ['person','award','team', 'company', 'characteristic']
+      relation_types = ['playsFor','hasAward','hasCharacteristic','defeated','isFounderOf', 'member', 'children']
 
 <a name="8"></a>
 ### Prompt Template and NLP Model
@@ -141,22 +135,21 @@ The System Prompt defines the role and expectations for the language model. It s
 The system prompt also details the types of entities and relations that the model should focus on, ensuring that the extracted information aligns with the provided definitions. It also directs the model to extract as many entities and relations as possible, and to generate the output without additional explanations or text. Here is the system prompt I used:
 
 
-
-system_prompt = PromptTemplate(
-    template = """
-    You are a top-tier algorithm designed for extracting information in structured formats to build a knowledge graph.
-    Your task is to identify the entities and relations requested with the user prompt, from a given text.
-    You must generate the output in a JSON containing a list with JSON objects having the following keys: "head", "head_type", "relation", "tail", and "tail_type".
-    The "head" key must contain the text of the extracted entity with one of the types from the provided list in the user prompt. 
-    The "head_type" key must contain the type of the extracted head entity which must be one of the types from {entity_types}.
-    The "relation" key must contain the type of relation between the "head" and the "tail" which must be one of the relations from {relation_types}.
-    The "tail" key must represent the text of an extracted entity which is the tail of the relation, and the "tail_type" key must contain the type of the tail entity from {entity_types}. 
-    Attempt to extract as many entities and relations as you can. 
-    IMPORTANT NOTES:
-    - Don't add any explanation and text. 
-    """,
-    input_variables=["entity_types","relation_types"],
-)
+      system_prompt = PromptTemplate(
+          template = """
+          You are a top-tier algorithm designed for extracting information in structured formats to build a knowledge graph.
+          Your task is to identify the entities and relations requested with the user prompt, from a given text.
+          You must generate the output in a JSON containing a list with JSON objects having the following keys: "head", "head_type", "relation", "tail", and "tail_type".
+          The "head" key must contain the text of the extracted entity with one of the types from the provided list in the user prompt. 
+          The "head_type" key must contain the type of the extracted head entity which must be one of the types from {entity_types}.
+          The "relation" key must contain the type of relation between the "head" and the "tail" which must be one of the relations from {relation_types}.
+          The "tail" key must represent the text of an extracted entity which is the tail of the relation, and the "tail_type" key must contain the type of the tail entity from {entity_types}. 
+          Attempt to extract as many entities and relations as you can. 
+          IMPORTANT NOTES:
+          - Don't add any explanation and text. 
+          """,
+          input_variables=["entity_types","relation_types"],
+      )
 
 <a name="10"></a>
 #### Human Prompt
@@ -165,105 +158,105 @@ The Human Prompt is used to provide a more user-oriented approach to guide the m
 
 
 
-human_prompt = PromptTemplate(
-    template = """ Based on the following example, extract entities and relations from the provided text.\n\n
-    Use the following entity types, don't use other entity that is not defined below:
-    # ENTITY TYPES:
-    {entity_types}
-    Use the following relation types, don't use other relation that is not defined below:
-    # RELATION TYPES:
-    {relation_types}
-    Below are a number of examples of text and their extracted entities and relationshhips.
-    {examples}
-    For the following text, generate extract entitites and relations as in the provided example.\n{format_instructions}\nText: {text}""",
-    input_variables=["entity_types","relation_types","examples","text"],
-    partial_variables={"format_instructions": parser.get_format_instructions()},
-)
+      human_prompt = PromptTemplate(
+          template = """ Based on the following example, extract entities and relations from the provided text.\n\n
+          Use the following entity types, don't use other entity that is not defined below:
+          # ENTITY TYPES:
+          {entity_types}
+          Use the following relation types, don't use other relation that is not defined below:
+          # RELATION TYPES:
+          {relation_types}
+          Below are a number of examples of text and their extracted entities and relationshhips.
+          {examples}
+          For the following text, generate extract entitites and relations as in the provided example.\n{format_instructions}\nText: {text}""",
+          input_variables=["entity_types","relation_types","examples","text"],
+          partial_variables={"format_instructions": parser.get_format_instructions()},
+      )
+
 To clarify what is expected from the model in terms of output format and content, we need to provide examples. They provide concrete instances of how text should be processed and what kind of entities and relations should be extracted. This ensures that the model understands the task and the specific requirements for formatting the output. Here is the examples I used:
 
+      examples = [
+          {
+              "text": "Adam is a soccer player for the Liverpool team since 2009, and last year he won the Golden Boot award",
+              "head": "Adam",
+              "head_type": "person",
+              "relation": "playsFor",
+              "tail": "Liverpool",
+              "tail_type": "team"
+          },
+          {
+              "text": "Adam is a soccer player for the Liverpool team since 2009, and last year he won the Golden Boot award",
+              "head": "Adam",
+              "head_type": "person",
+              "relation": "hasAward",
+              "tail": "Golden Boot",
+              "tail_type": "award"
+          },
+          {
+              "text": "Liverpool is a soccer team that won the Premier League title in 2020",
+              "head": "Premier League title",
+              "head_type": "award",
+              "relation": "isWonBy",
+              "tail": "Liverpool",
+              "tail_type": "team"
+          },
+          {
+              "text": "The Golden Boot is awarded to the top scorer of the Premier League",
+              "head": "Golden Boot",
+              "head_type": "award",
+              "relation": "hasCharacteristic",
+              "tail": "top scorer of the Premier League",
+              "tail_type": "characteristic"
+          },
+          {
+              "text": "Adam Luis was player of UK national team that defeated US team",
+              "head": "UK national team",
+              "head_type": "team",
+              "relation": "defeated",
+              "tail": "US team",
+              "tail_type": "team"
+          },
+      ]
 
-
-examples = [
-    {
-        "text": "Adam is a soccer player for the Liverpool team since 2009, and last year he won the Golden Boot award",
-        "head": "Adam",
-        "head_type": "person",
-        "relation": "playsFor",
-        "tail": "Liverpool",
-        "tail_type": "team"
-    },
-    {
-        "text": "Adam is a soccer player for the Liverpool team since 2009, and last year he won the Golden Boot award",
-        "head": "Adam",
-        "head_type": "person",
-        "relation": "hasAward",
-        "tail": "Golden Boot",
-        "tail_type": "award"
-    },
-    {
-        "text": "Liverpool is a soccer team that won the Premier League title in 2020",
-        "head": "Premier League title",
-        "head_type": "award",
-        "relation": "isWonBy",
-        "tail": "Liverpool",
-        "tail_type": "team"
-    },
-    {
-        "text": "The Golden Boot is awarded to the top scorer of the Premier League",
-        "head": "Golden Boot",
-        "head_type": "award",
-        "relation": "hasCharacteristic",
-        "tail": "top scorer of the Premier League",
-        "tail_type": "characteristic"
-    },
-    {
-        "text": "Adam Luis was player of UK national team that defeated US team",
-        "head": "UK national team",
-        "head_type": "team",
-        "relation": "defeated",
-        "tail": "US team",
-        "tail_type": "team"
-    },
-]
 The outputs will include identified entities and their respective relationships, as shown below:
 
-[
-    {
-        "head": "Ahmadreza Abedzadeh",
-        "head_type": "person",
-        "relation": "playsFor",
-        "tail": "Esteghlal",
-        "tail_type": "team"
-    },
-    {
-        "head": "Ahmadreza Abedzadeh",
-        "head_type": "person",
-        "relation": "hasAward",
-        "tail": "Asian Games Gold Medal",
-        "tail_type": "award"
-    },
-    {
-        "head": "Ahmadreza Abedzadeh",
-        "head_type": "person",
-        "relation": "isFounderOf",
-        "tail": "restaurant in Motelghoo",
-        "tail_type": "company"
-    },
-    {
-        "head": "Ahmadreza Abedzadeh",
-        "head_type": "person",
-        "relation": "hasCharacteristic",
-        "tail": "Eagle of Asia",
-        "tail_type": "characteristic"
-    },
-    {
-        "head": "Ahmadreza Abedzadeh",
-        "head_type": "person",
-        "relation": "children",
-        "tail": "Negar",
-        "tail_type": "person"
-    }
-]
+      [
+          {
+              "head": "Ahmadreza Abedzadeh",
+              "head_type": "person",
+              "relation": "playsFor",
+              "tail": "Esteghlal",
+              "tail_type": "team"
+          },
+          {
+              "head": "Ahmadreza Abedzadeh",
+              "head_type": "person",
+              "relation": "hasAward",
+              "tail": "Asian Games Gold Medal",
+              "tail_type": "award"
+          },
+          {
+              "head": "Ahmadreza Abedzadeh",
+              "head_type": "person",
+              "relation": "isFounderOf",
+              "tail": "restaurant in Motelghoo",
+              "tail_type": "company"
+          },
+          {
+              "head": "Ahmadreza Abedzadeh",
+              "head_type": "person",
+              "relation": "hasCharacteristic",
+              "tail": "Eagle of Asia",
+              "tail_type": "characteristic"
+          },
+          {
+              "head": "Ahmadreza Abedzadeh",
+              "head_type": "person",
+              "relation": "children",
+              "tail": "Negar",
+              "tail_type": "person"
+          }
+      ]
 
  
 
@@ -273,42 +266,42 @@ The structured JSON outputs are parsed to extract unique entities and relationsh
 
 
 
-MERGE (iranian_national_team:team {id: "Iranian national team"})
-MERGE (iranian_football_league:award {id: "Iranian Football League"})
-MERGE (negar:person {id: "Negar"})
-MERGE (amir:person {id: "Amir"})
-MERGE (restaurant_in_motelghoo:company {id: "restaurant in Motelghoo"})
-MERGE (sepahan:team {id: "Sepahan"})
-MERGE (ahmadreza_abedzadeh:person {id: "Ahmadreza Abedzadeh"})
-MERGE (eagle_of_asia:characteristic {id: "Eagle of Asia"})
-MERGE (persepolis:team {id: "Persepolis"})
-MERGE (esteghlal:team {id: "Esteghlal"})
-MERGE (sd_ponferradina:team {id: "SD Ponferradina"})
-MERGE (hazfi_cup:award {id: "Hazfi Cup"})
-MERGE (asian_games_gold_medal:award {id: "Asian Games Gold Medal"})
-MERGE (ahmadreza_abedzadeh)-[:playsFor]->(esteghlal)
-MERGE (ahmadreza_abedzadeh)-[:playsFor]->(sepahan)
-MERGE (ahmadreza_abedzadeh)-[:playsFor]->(persepolis)
-MERGE (ahmadreza_abedzadeh)-[:playsFor]->(iranian_national_team)
-MERGE (ahmadreza_abedzadeh)-[:hasAward]->(asian_games_gold_medal)
-MERGE (ahmadreza_abedzadeh)-[:isFounderOf]->(restaurant_in_motelghoo)
-MERGE (ahmadreza_abedzadeh)-[:hasCharacteristic]->(eagle_of_asia)
-MERGE (ahmadreza_abedzadeh)-[:children]->(negar)
-MERGE (ahmadreza_abedzadeh)-[:children]->(amir)
-MERGE (amir)-[:playsFor]->(sd_ponferradina)
-MERGE (amir)-[:playsFor]->(iranian_national_team)
-MERGE (esteghlal)-[:hasAward]->(iranian_football_league)
-MERGE (persepolis)-[:hasAward]->(iranian_football_league)
-MERGE (persepolis)-[:hasAward]->(hazfi_cup)
+      MERGE (iranian_national_team:team {id: "Iranian national team"})
+      MERGE (iranian_football_league:award {id: "Iranian Football League"})
+      MERGE (negar:person {id: "Negar"})
+      MERGE (amir:person {id: "Amir"})
+      MERGE (restaurant_in_motelghoo:company {id: "restaurant in Motelghoo"})
+      MERGE (sepahan:team {id: "Sepahan"})
+      MERGE (ahmadreza_abedzadeh:person {id: "Ahmadreza Abedzadeh"})
+      MERGE (eagle_of_asia:characteristic {id: "Eagle of Asia"})
+      MERGE (persepolis:team {id: "Persepolis"})
+      MERGE (esteghlal:team {id: "Esteghlal"})
+      MERGE (sd_ponferradina:team {id: "SD Ponferradina"})
+      MERGE (hazfi_cup:award {id: "Hazfi Cup"})
+      MERGE (asian_games_gold_medal:award {id: "Asian Games Gold Medal"})
+      MERGE (ahmadreza_abedzadeh)-[:playsFor]->(esteghlal)
+      MERGE (ahmadreza_abedzadeh)-[:playsFor]->(sepahan)
+      MERGE (ahmadreza_abedzadeh)-[:playsFor]->(persepolis)
+      MERGE (ahmadreza_abedzadeh)-[:playsFor]->(iranian_national_team)
+      MERGE (ahmadreza_abedzadeh)-[:hasAward]->(asian_games_gold_medal)
+      MERGE (ahmadreza_abedzadeh)-[:isFounderOf]->(restaurant_in_motelghoo)
+      MERGE (ahmadreza_abedzadeh)-[:hasCharacteristic]->(eagle_of_asia)
+      MERGE (ahmadreza_abedzadeh)-[:children]->(negar)
+      MERGE (ahmadreza_abedzadeh)-[:children]->(amir)
+      MERGE (amir)-[:playsFor]->(sd_ponferradina)
+      MERGE (amir)-[:playsFor]->(iranian_national_team)
+      MERGE (esteghlal)-[:hasAward]->(iranian_football_league)
+      MERGE (persepolis)-[:hasAward]->(iranian_football_league)
+      MERGE (persepolis)-[:hasAward]->(hazfi_cup)
 
 <a name="12"></a>
 ### Building the Knowledge Graph
-Based on the above Cypher queries, we can built and populate the knowledge graph in Neo4j, shown below:
 
- 
+Based on the above Cypher queries, we can build and populate the knowledge graph in Neo4j, shown below:
 
-Open fibnal.png
-fibnal.png
+
+
+
 Fig. 5: Final graph obtained from the text
 
 <a name="13"></a>
@@ -318,4 +311,6 @@ Here, I've provided a brief demonstration of how tools such as LangChain, Llama3
 <a name="14"></a>
 ## References 
 
-LangChain: Chat with Your Data  
+**<a href=" https://www.deeplearning.ai/short-courses/langchain-chat-with-your-data/">LangChain: Chat with Your Data</a>**
+
+ 
