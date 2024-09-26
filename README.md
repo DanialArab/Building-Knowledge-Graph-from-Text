@@ -73,7 +73,7 @@ In order to chat with our data we first need to load data and adjust its format 
 
 For this we can use different document loaders, shown in Fig. 2, to load data as text, video transcript, etc. and convert them to a standard document object which can consist of contents and the associated metadata. 
 
-
+![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/rgg.png)
 Fig. 2: LangChain document loaders 
 Then we need to split data into individual sentences to facilitate finer extraction of entities and relations.
 
@@ -99,7 +99,7 @@ Chunk 2: 80 HP and an eight-speed automatic transmission that will
 If we simply do splitting as above we may end up with part of the sentence in one chunk and the other part of the sentence in the other chunk. Therefore, we will not be able to answer the question like “what are the specifications on the Camry?” because we do not have the right information in either chunk. To solve this issue, we do the split with some chunks and overlaps, shown below:
 
 
-
+![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/chunk.png)
 Fig. 4: Document splitting into different chunks with specifying the chunk size and overlap helps us retain meaningful relationship
 
 We can specify these details like chunk size, chunk overlap, separator, etc. in the specific text splitter we use, some of them areas follow:
@@ -301,7 +301,7 @@ Based on the above Cypher queries, we can build and populate the knowledge graph
 
 
 
-
+![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/final.png)
 Fig. 5: Final graph obtained from the text
 
 <a name="13"></a>
