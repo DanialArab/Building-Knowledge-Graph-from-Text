@@ -66,6 +66,8 @@ In the following, the steps required to transform the text above into graph will
 <a name="4"></a>
 ## Detailed Steps
 
+![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/3.png)
+
 <a name="5"></a>
 ### Data Loading
 
@@ -307,6 +309,8 @@ Based on the above Cypher queries, we can build and populate the knowledge graph
 
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/final.png)
 Fig. 5: Final graph obtained from the text
+
+![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/2.png)
 
 <a name="13"></a>
 ## Conclusions
