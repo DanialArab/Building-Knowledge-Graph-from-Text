@@ -1,5 +1,6 @@
 # Text to Graph: Swift Transformation from Unstructured Text to Structured Knowledge Graph
 
+
 1. [Potentials at a Glance](#1)
 2. [Tools and frameworks](#2)  
 3. [Quick note on the data used for this demonstration](#3)
@@ -15,6 +16,9 @@
 5. [Conclusions](#13)
 6. [References ](#14)
  
+
+
+![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/1.png)
 
 <a name="1"></a>
 ## Potentials at a Glance
