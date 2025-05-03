@@ -20,7 +20,6 @@
 
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/1.png)
 
-
 <a name="1"></a>
 ## Potentials at a Glance
 Given the power of large language models (LLMs), the possibilities for building advanced solutions in fraud detection and identity verification are virtually limitless. By harnessing the capabilities of NLP and graph databases, we can create sophisticated systems that not only understand and process vast amounts of unstructured text but also reveal intricate relationships and patterns within the data. This project exemplifies how we can leverage these cutting-edge technologies to transform raw/unstructured text data into an interconnected/structured knowledge graph, opening up new avenues for detecting fraudulent activities and verifying identities with unprecedented accuracy and efficiency. The potential applications are vast, spanning across various domains like KYB, enhancing our ability to find related, parent/child, companies and combat money laundering  and ensure secure identity verification. Here is the result of a quick experimentation to transform text into graph:
