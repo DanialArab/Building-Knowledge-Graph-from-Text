@@ -18,7 +18,7 @@
  
 
 
-                                                                        ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/1.png)
+![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/1.png)
 
 <a name="1"></a>
 ## Potentials at a Glance
