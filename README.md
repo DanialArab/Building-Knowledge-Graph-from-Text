@@ -16,9 +16,10 @@
 5. [Conclusions](#13)
 6. [References ](#14)
  
-
+## A bit of personal note
 
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/1.png)
+
 
 <a name="1"></a>
 ## Potentials at a Glance
