@@ -1,5 +1,6 @@
 # Text to Graph: Swift Transformation from Unstructured Text to Structured Knowledge Graph
 
+0.[A Bit of a Personal Note](#0)
 1. [Potentials at a Glance](#1)
 2. [Tools and frameworks](#2)  
 3. [Quick note on the data used for this demonstration](#3)
@@ -15,9 +16,12 @@
 5. [Conclusions](#13)
 6. [References ](#14)
  
-## A bit of personal note
+<a name="0"></a>
+## A Bit of a Personal Note
 
-I spent 9 years of my life on professional soccer and had the privilege of being the main Goalkeeper of the Iran's youth National team, Italy, 2003. Back in the days, when I was dreaming about being a goalie from very early days, Ahmad Reza Abedzadeh was my idol and I had his pictures all over the walls in my room. So I was developing the idea of this project, which was converting unstructured data of any type, in this case text, into a knowledge graph database, I decided to work on his Wikipedia page as a proof of concept.
+I spent 9 years of my life playing professional soccer and had the honor of serving as the main goalkeeper for Iran's Youth National Team during the tournament in Italy, 2003. As a kid, I dreamed of becoming a goalkeeper, and Ahmad Reza Abedzadeh was my idol—I had his posters all over my room. Later, when I joined the youth team at Persepolis, I trained for two years while he was the goalkeeper for the senior team. That experience was surreal and deeply motivating.
+
+Years later, as I began developing this project—which converts unstructured data, like text, into a knowledge graph database—I chose his Wikipedia page as my proof of concept. It felt like coming full circle: using my technical skills to pay tribute to the person who first inspired my journey.
 
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/1.png)
 
