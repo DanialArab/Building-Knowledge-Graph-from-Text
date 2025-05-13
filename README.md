@@ -25,7 +25,7 @@ Years later, as I began developing this project—which converts unstructured da
 
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/1.png)
 
-Figure 1: Anhmad Reza Abedzadeh
+Figure 1: Ahmad Reza Abedzadeh
 
 <a name="1"></a>
 ## Potentials at a Glance
