@@ -24,6 +24,7 @@ I spent 9 years of my life playing professional soccer and had the honor of serv
 Years later, as I began developing this project—which converts unstructured data, like text, into a knowledge graph database—I chose his Wikipedia page as my proof of concept. It felt like coming full circle: using my technical skills to pay tribute to the person who first inspired my journey.
 
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/1.png)
+Figure 1: Anhmad Reza Abedzadeh
 
 <a name="1"></a>
 ## Potentials at a Glance
