@@ -25,14 +25,14 @@ Years later, as I began developing this project—which converts unstructured da
 
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/1.png)
 
-Figure 1: Ahmad Reza Abedzadeh
+Fig. 1: Ahmad Reza Abedzadeh
 
 <a name="1"></a>
 ## Potentials at a Glance
 Given the power of large language models (LLMs), the possibilities for building advanced solutions in fraud detection and identity verification are virtually limitless. By harnessing the capabilities of NLP and graph databases, we can create sophisticated systems that not only understand and process vast amounts of unstructured text but also reveal intricate relationships and patterns within the data. This project exemplifies how we can leverage these cutting-edge technologies to transform raw/unstructured text data into an interconnected/structured knowledge graph, opening up new avenues for detecting fraudulent activities and verifying identities with unprecedented accuracy and efficiency. The potential applications are vast, spanning across various domains like KYB, enhancing our ability to find related, parent/child, companies and combat money laundering  and ensure secure identity verification. Here is the result of a quick experimentation to transform text into graph:
 
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/1000.png)
-Fig. 1: We can build advanced solutions to quickly transform unstructured text into structured graph 
+Fig. 2: We can build advanced solutions to quickly transform unstructured text into structured graph 
 
 <a name="2"></a>
 ## Tools and frameworks
@@ -87,7 +87,7 @@ In order to chat with our data we first need to load data and adjust its format 
 For this we can use different document loaders, shown in Fig. 2, to load data as text, video transcript, etc. and convert them to a standard document object which can consist of contents and the associated metadata. 
 
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/rgg.png)
-Fig. 2: LangChain document loaders 
+Fig. 3: LangChain document loaders 
 Then we need to split data into individual sentences to facilitate finer extraction of entities and relations.
 
 <a name="6"></a>
@@ -96,7 +96,7 @@ Then we need to split data into individual sentences to facilitate finer extract
 The documents could be huge and we need to split them up into smaller chunks. This is very important because when we do retrieval augmentation generation we only need to retrieve the piece of the content that is most relevant: we do not want to select the whole document that we loaded in but rather only a paragraph or a few sentences.
 
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/doc%20sp.png)
-Fig. 3: Document splitting in LangChain 
+Fig. 4: Document splitting in LangChain 
 
 This document splitting may sound trivial but it has a lot of nuances and details that may have a large effect down the line. The main idea is that we want to retain the meaningful relationship. For example, if we have the following data like
 
@@ -113,7 +113,7 @@ If we simply do splitting as above we may end up with part of the sentence in on
 
 
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/chunk.png)
-Fig. 4: Document splitting into different chunks with specifying the chunk size and overlap helps us retain meaningful relationship
+Fig. 5: Document splitting into different chunks with specifying the chunk size and overlap helps us retain meaningful relationship
 
 We can specify these details like chunk size, chunk overlap, separator, etc. in the specific text splitter we use, some of them areas follow:
 
@@ -315,7 +315,7 @@ Based on the above Cypher queries, we can build and populate the knowledge graph
 
 
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/final.png)
-Fig. 5: Final graph obtained from the text
+Fig. 6: Final graph obtained from the text
 
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/2.png)
 
