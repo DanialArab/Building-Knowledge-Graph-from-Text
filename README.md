@@ -19,7 +19,7 @@
 <a name="0"></a>
 ## A Bit of a Personal Note
 
-I spent 9 years of my life playing professional soccer and had the honor of serving as the main goalkeeper for Iran's Youth National Team during the tournament in Italy, 2003. As a kid, I dreamed of becoming a goalkeeper, and Ahmad Reza Abedzadeh was my idol—I had his posters all over my room. Later, when I joined the youth team at Persepolis, I trained for two years while he was the goalkeeper for the senior team. That experience was surreal and deeply motivating.
+I spent 9 years of my life playing professional soccer and had the honor of serving as the main goalkeeper for Iran's Youth National Team during the tournament in Italy, 2003. As a kid, I dreamed of becoming a goalkeeper, and Ahmad Reza Abedzadeh was my idol—I had his posters all over my room. Later, when I joined the youth team at Persepolis, I had an opportunity to practice with him for two years while he was the goalkeeper for the senior team. That experience was surreal and deeply motivating.
 
 Years later, as I began developing this project—which converts unstructured data, like text, into a knowledge graph database—I chose his Wikipedia page as my proof of concept. It felt like coming full circle: using my technical skills to pay tribute to the person who first inspired my journey.
 
