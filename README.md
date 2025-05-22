@@ -90,6 +90,7 @@ For this we can use different document loaders, shown in Fig. 4, to load data as
 
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/rgg.png)
 Fig. 4: LangChain document loaders 
+
 Then we need to split data into individual sentences to facilitate finer extraction of entities and relations.
 
 <a name="6"></a>
