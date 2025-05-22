@@ -318,7 +318,6 @@ Based on the above Cypher queries, we can build and populate the knowledge graph
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/final.png)
 Fig. 7: Final graph obtained from the text
 
-![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/2.png)
 
 <a name="13"></a>
 ## Conclusions
