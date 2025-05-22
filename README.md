@@ -75,6 +75,8 @@ In the following, the steps required to transform the text above into graph will
 
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/3.png)
 
+Fig. 3: Quick overview of the pipeline
+
 <a name="5"></a>
 ### Data Loading
 
