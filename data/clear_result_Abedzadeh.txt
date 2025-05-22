@@ -1,0 +1,135 @@
+[
+    {
+        "head": "Ahmadreza Abedzadeh",
+        "head_type": "person",
+        "relation": "playsFor",
+        "tail": "Esteghlal",
+        "tail_type": "team"
+    },
+    {
+        "head": "Ahmadreza Abedzadeh",
+        "head_type": "person",
+        "relation": "playsFor",
+        "tail": "Sepahan",
+        "tail_type": "team"
+    },
+    {
+        "head": "Ahmadreza Abedzadeh",
+        "head_type": "person",
+        "relation": "playsFor",
+        "tail": "Persepolis",
+        "tail_type": "team"
+    },
+    {
+        "head": "Ahmadreza Abedzadeh",
+        "head_type": "person",
+        "relation": "playsFor",
+        "tail": "Iran national football team",
+        "tail_type": "team"
+    },
+    {
+        "head": "Ahmadreza Abedzadeh",
+        "head_type": "person",
+        "relation": "hasCharacteristic",
+        "tail": "unbeaten record in the Tehran derby",
+        "tail_type": "characteristic"
+    },
+    {
+        "head": "Ahmadreza Abedzadeh",
+        "head_type": "person",
+        "relation": "hasCharacteristic",
+        "tail": "802 consecutive minutes without conceding a goal",
+        "tail_type": "characteristic"
+    },
+    {
+        "head": "Ahmadreza Abedzadeh",
+        "head_type": "person",
+        "relation": "isFounderOf",
+        "tail": "goalkeeping coach",
+        "tail_type": "company"
+    },
+    {
+        "head": "Ahmadreza Abedzadeh",
+        "head_type": "person",
+        "relation": "isFounderOf",
+        "tail": "Saipa",
+        "tail_type": "company"
+    },
+    {
+        "head": "Ahmadreza Abedzadeh",
+        "head_type": "person",
+        "relation": "isFounderOf",
+        "tail": "Esteghlal Ahvaz",
+        "tail_type": "company"
+    },
+    {
+        "head": "Ahmadreza Abedzadeh",
+        "head_type": "person",
+        "relation": "isFounderOf",
+        "tail": "Persepolis",
+        "tail_type": "company"
+    },
+    {
+        "head": "Ahmadreza Abedzadeh",
+        "head_type": "person",
+        "relation": "isFounderOf",
+        "tail": "Steel Azin",
+        "tail_type": "company"
+    },
+    {
+        "head": "Ahmadreza Abedzadeh",
+        "head_type": "person",
+        "relation": "isFounderOf",
+        "tail": "Los Angeles Blues",
+        "tail_type": "company"
+    },
+    {
+        "head": "Ahmadreza Abedzadeh",
+        "head_type": "person",
+        "relation": "hasAward",
+        "tail": "Eagle of Asia",
+        "tail_type": "award"
+    },
+    {
+        "head": "Ahmadreza Abedzadeh",
+        "head_type": "person",
+        "relation": "hasAward",
+        "tail": "Iran's favorite player of last 30 years",
+        "tail_type": "award"
+    },
+    {
+        "head": "Ahmadreza Abedzadeh",
+        "head_type": "person",
+        "relation": "children",
+        "tail": "Negar",
+        "tail_type": "person"
+    },
+    {
+        "head": "Ahmadreza Abedzadeh",
+        "head_type": "person",
+        "relation": "children",
+        "tail": "Amir",
+        "tail_type": "person"
+    },
+    {
+        "head": "Amir",
+        "head_type": "person",
+        "relation": "playsFor",
+        "tail": "SD Ponferradina",
+        "tail_type": "team"
+    },
+    {
+        "head": "Amir",
+        "head_type": "person",
+        "relation": "playsFor",
+        "tail": "Iran national football team",
+        "tail_type": "team"
+    },
+    {
+        "head": "Ahmadreza Abedzadeh",
+        "head_type": "person",
+        "relation": "hasCharacteristic",
+        "tail": "runs a restaurant in Motelghoo",
+        "tail_type": "characteristic"
+    }
+]
