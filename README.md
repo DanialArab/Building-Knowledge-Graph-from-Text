@@ -68,7 +68,7 @@ As a quick demonstration, I chose data loaded as text from Wikipedia on Iranian 
       His goalkeeping legacy in Iran is rivaled only by Nasser Hejazi.Abedzadeh married in 1988 and has one daughter, Negar, and one son, Amir, who is also a goalkeeper and plays for SD Ponferradina and the Iranian national team.
       Abedzadeh also runs a restaurant in Motelghoo, one of the cities of Northern Iran.EsteghlalIranian Football League: 1989–90Asian Club Championship: 1990–91, runner up: 1991PersepolisIranian Football League: 1995–96, 1996–97, 1998–99, 1999–2000Hazfi Cup: 1998–99IranAsian Games Gold Medal: 1990RSSSF archive of Ahmad Reza Abedzadeh's international appearances
 
-In the following, the steps required to transform the text above into graph will be detailed. 
+In the following, the steps required to transform the text above into the knowledge graph will be detailed. 
 
 <a name="4"></a>
 ## Detailed Steps
@@ -86,10 +86,10 @@ In order to chat with our data we first need to load data and adjust its format 
 - Youtube
 - …
 
-For this we can use different document loaders, shown in Fig. 2, to load data as text, video transcript, etc. and convert them to a standard document object which can consist of contents and the associated metadata. 
+For this we can use different document loaders, shown in Fig. 4, to load data as text, video transcript, etc. and convert them to a standard document object which can consist of contents and the associated metadata. 
 
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/rgg.png)
-Fig. 3: LangChain document loaders 
+Fig. 4: LangChain document loaders 
 Then we need to split data into individual sentences to facilitate finer extraction of entities and relations.
 
 <a name="6"></a>
@@ -98,7 +98,7 @@ Then we need to split data into individual sentences to facilitate finer extract
 The documents could be huge and we need to split them up into smaller chunks. This is very important because when we do retrieval augmentation generation we only need to retrieve the piece of the content that is most relevant: we do not want to select the whole document that we loaded in but rather only a paragraph or a few sentences.
 
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/doc%20sp.png)
-Fig. 4: Document splitting in LangChain 
+Fig. 5: Document splitting in LangChain 
 
 This document splitting may sound trivial but it has a lot of nuances and details that may have a large effect down the line. The main idea is that we want to retain the meaningful relationship. For example, if we have the following data like
 
@@ -115,7 +115,7 @@ If we simply do splitting as above we may end up with part of the sentence in on
 
 
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/chunk.png)
-Fig. 5: Document splitting into different chunks with specifying the chunk size and overlap helps us retain meaningful relationship
+Fig. 6: Document splitting into different chunks with specifying the chunk size and overlap helps us retain meaningful relationship
 
 We can specify these details like chunk size, chunk overlap, separator, etc. in the specific text splitter we use, some of them areas follow:
 
@@ -314,10 +314,8 @@ The structured JSON outputs are parsed to extract unique entities and relationsh
 
 Based on the above Cypher queries, we can build and populate the knowledge graph in Neo4j, shown below:
 
-
-
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/final.png)
-Fig. 6: Final graph obtained from the text
+Fig. 7: Final graph obtained from the text
 
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/2.png)
 
