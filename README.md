@@ -321,7 +321,7 @@ Fig. 7: Final graph obtained from the text
 
 <a name="13"></a>
 ## Conclusions
-Here, I've provided a brief demonstration of how tools such as LangChain, Llama3, Groq, and Neo4j can be leveraged to convert text into graph databases. By efficiently transforming text data into meaningful, interconnected entities and relationships, we open up new opportunities for enhancing fraud detection and combating money laundering. The potential applications are extensive, ranging from AIG databases to KYB processes, where we can better identify related, parent/child companies and ensure secure identity verification. 
+Here, I've provided a brief demonstration of how tools such as LangChain, Llama3, Groq, and Neo4j can be leveraged to convert text into graph databases. By efficiently transforming text data into meaningful, interconnected entities and relationships, we open up new huge opportunities. 
 
 <a name="14"></a>
 ## References 
