@@ -1,5 +1,5 @@
 # Text to Graph: Swift Transformation from Unstructured Text to Structured Knowledge Graph
-
+ 
 0. [A Bit of a Personal Note](#0)
 1. [Potentials at a Glance](#1)
 2. [Tools and frameworks](#2)  
