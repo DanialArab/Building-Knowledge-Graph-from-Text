@@ -118,7 +118,7 @@ If we simply do splitting as above we may end up with part of the sentence in on
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/chunk.png)
 Fig. 6: Document splitting into different chunks with specifying the chunk size and overlap helps us retain meaningful relationship
 
-We can specify these details like chunk size, chunk overlap, separator, etc. in the specific text splitter we use, some of them areas follow:
+We can specify these details like chunk size, chunk overlap, separator, etc. in the specific text splitter we use, some of them are as follows:
 
 - CharacterTextSplitter
 - MarkdownHeaderTextSplitter
