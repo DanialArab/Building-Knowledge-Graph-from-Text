@@ -29,7 +29,7 @@ Fig. 1: Ahmad Reza Abedzadeh
 
 <a name="1"></a>
 ## Potentials at a Glance
-Given the power of large language models (LLMs), the possibilities for building advanced solutions to solve real word probles are virtually limitless. By harnessing the capabilities of NLP and graph databases, we can create sophisticated systems that not only understand and process vast amounts of unstructured text but also reveal intricate relationships and patterns within the data. This project exemplifies how we can leverage these cutting-edge technologies to transform raw/unstructured text data into an interconnected/structured knowledge graph. The potential applications are huge. 
+Given the power of large language models (LLMs), the possibilities for building advanced solutions to solve real-world problems are virtually limitless. By harnessing the capabilities of NLP and graph databases, we can create sophisticated systems that not only understand and process vast amounts of unstructured text but also reveal intricate relationships and patterns within the data. This project exemplifies how we can leverage these cutting-edge technologies to transform raw/unstructured text data into an interconnected/structured knowledge graph. The potential applications are huge. 
 
 ![](https://github.com/DanialArab/images/blob/main/text%20to%20graph/1000.png)
 Fig. 2: We can build advanced solutions to quickly transform unstructured text into a structured graph 
